@@ -15,7 +15,7 @@ async def consume(topic_name):
         
         for message in messages:
             if message is None:
-                print('Message not found')
+                print('Messages not found')
             elif message.error() is not None:
                 print(f'Error: {message.error()}')
             else:
@@ -28,7 +28,7 @@ def run_consumer():
         asyncio.run(consume('ds.police.service.calls'))
         
     except KeyboardInterrupt as e:
-        print("Shutting down...")
+        print("Keyboard interuption, shutting down")
         
 if __name__ == '__main__':
     run_consumer()
